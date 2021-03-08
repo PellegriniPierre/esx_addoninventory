@@ -8,6 +8,14 @@ CREATE TABLE `addon_inventory` (
 	PRIMARY KEY (`name`)
 );
 
+INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
+('property', 'Propriété', 0),
+('society_ambulance', 'Ambulance', 1),
+('society_cardealer', 'Vendeur de voiture', 1),
+('society_mechanic', 'Mecanicien', 1),
+('society_police', 'Police', 1),
+('society_taxi', 'Taxi', 1);
+
 CREATE TABLE `addon_inventory_items` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`inventory_name` VARCHAR(100) NOT NULL,
@@ -20,3 +28,5 @@ CREATE TABLE `addon_inventory_items` (
 	INDEX `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`, `name`, `owner`),
 	INDEX `index_addon_inventory_inventory_name` (`inventory_name`)
 );
+
+
